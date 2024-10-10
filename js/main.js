@@ -1,6 +1,7 @@
 'use strict';
 window.addEventListener("load", (e)=> 
 {
+   
     document.getElementById("startGame").addEventListener("click", function()
     {
         var myApp = Game.getInstance();
@@ -44,8 +45,10 @@ class Game
        Game.death.cloneNode().play();
        Game.alive = false;
        clearInterval(Game.Ticker);
-       document.getElementById("death").removeAttribute("class");
+       document.getElementById("death").classList.toggle("animateYouAreDead");
+       document.getElementById("blackout").classList.toggle("active");
     }
+
 
     setup()
     {
